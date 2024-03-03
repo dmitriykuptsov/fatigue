@@ -1,0 +1,78 @@
+\documentclass[conference,10pt,letter]{IEEEtran}
+
+\usepackage{url}
+\usepackage{amssymb,amsthm}
+\usepackage{graphicx,color}
+
+%\usepackage{balance}
+
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{color, colortbl}
+\usepackage{times}
+\usepackage{caption}
+\usepackage{rotating}
+\usepackage{subcaption}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+
+\newcommand{\XXXnote}[1]{{\bf\color{red} XXX: #1}}
+\newcommand{\YYYnote}[1]{{\bf\color{red} YYY: #1}}
+\newcommand*{\etal}{{\it et al.}}
+
+\newcommand{\eat}[1]{}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\im}{\item}
+\newcommand{\eg}{{\it e.g.}\xspace}
+\newcommand{\ie}{{\it i.e.}\xspace}
+\newcommand{\etc}{{\it etc.}\xspace}
+
+\def\P{\mathop{\mathsf{P}}}
+\def\E{\mathop{\mathsf{E}}}
+
+\begin{document}
+\sloppy
+\title{Detecting truck driver's fatigue and distractions using Convolutoinal Neural Networks}
+\maketitle
+\begin{abstract}
+
+    Driving a truck when the driver is experiencing fatigue and distractions 
+    is considered unsafe. Therefore, controlling the driver's in-cabin behavior is 
+    an important task (for example at mines and on roads). Once the event is detected 
+    the system can send a sound alert to the truck driver and notify site operations 
+    that unsafe driving behavior was detected.
+
+    In this document, we describe a prototype implementation of a simple solution that 
+    detects fatigue and distractions events and notifies the control center. Our solution 
+    is based on convolutional neural networks (CNN) combined with a regular neural network 
+    to detect distractions and fatigue instances. Apart from the image recognition we also 
+    wrote a simple backend that is capable of collecting GPS coordinates, short video 
+    clips, and actual events in the database (fatigue and distraction). The user interface 
+    allows the controller to confirm and, if necessary, correct the events for further 
+    updating the CNN model. All events are displayed on the map for analysis. Historical 
+    data browsing is also possible for more in-depth analysis of the driver's behavior. 
+    
+    We have trained the neural network with $500$ labeled images (we had three categories or classes in our dataset: 
+    distraction, fatigue, and regular, normal operation), and verified the accuracy of the solution using another 
+    $500$ images (unlabeled). The validation was performed by visually inspecting $500$ images and comparing them to 
+    the predicted result. The CNN, apart from classification, was also outputing a bounding box.  
+
+
+\end{abstract}
+\input intro.tex
+%\input background.tex
+%\input hardware.tex
+%\input experimental.tex
+%\input conclusions.tex
+%\balance
+%\bibliographystyle{abbrv}
+%\bibliography{mybib}
+
+\end{document}
+
