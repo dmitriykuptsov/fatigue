@@ -1,1 +1,1 @@
-# fatigue_at_mine
+# Fatigue detection
